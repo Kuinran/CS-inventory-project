@@ -14,4 +14,5 @@ The goals and functionality intended to be implemented are the following:
 * Users should be able to export the scheduling information as well as the information that needs to be sent to a resources (ex: PDF, simple text...)
 * Notify the resource of scheduling changes (doesn't actually need to send out a notification but playing with different systems is always a bonus).
 * Different notification delays should be configurable (ex: days before sending out a reminder)
-* Optionally, an authentication system can be implemented
+* Users will have to authenticate themselves using a username and password before accessing database
+* Databases should be able to be connected to using an IP or DNS address which would be configurable on the login screen
