@@ -49,11 +49,18 @@ namespace CS_project
 
         private void Button_Login_Click(object sender, RoutedEventArgs e)
         {
-            // send login data, if failed make message about error (unhide login_error)
-            //Error_Login.Visibility = Visibility.Visible;
-            // else hide login and go to main screen
-            Screen_Login.Visibility = Visibility.Collapsed;
-            Screen_Main.Visibility = Visibility.Visible;
+            // send login data, if successful unhide main menu
+            if (SQL_Instructions.SQL_Connect(Serverip.Text, Username.Text, Servername.Text, Portname.Text, Password.Password) != null)
+            {
+                Screen_Login.Visibility = Visibility.Collapsed;
+                Screen_Main.Visibility = Visibility.Visible;
+            }
+            else // else present error msg
+            {
+                Error_Login.Visibility = Visibility.Visible;
+            }
+
+
         }
     }
 }

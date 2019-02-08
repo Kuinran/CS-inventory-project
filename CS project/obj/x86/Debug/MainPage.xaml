@@ -9,21 +9,32 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid x:ConnectionId='2' x:Name="Screen_Login" HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Stretch" Width="auto" Visibility="Collapsed">
+        <Grid x:ConnectionId='2' x:Name="Screen_Login" HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Stretch" Width="auto" Visibility="Visible">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <TextBlock x:ConnectionId='6' x:Name="Title_Text" Grid.Row="0" HorizontalAlignment="Center" Height="Auto" Margin="0,200,0,0" Text="Title" TextWrapping="Wrap" VerticalAlignment="Top" Width="Auto" FontSize="100"/>
             <StackPanel Grid.Row="1" Height="auto" Width="auto">
-                <TextBox x:ConnectionId='7' x:Name="Username" HorizontalAlignment="Center" Height="Auto" Text="Type your username here" VerticalAlignment="Center" Width="400" Header="Username"                                                                       />
-                <PasswordBox x:ConnectionId='8' x:Name="Password" HorizontalAlignment="Center" Height="Auto" VerticalAlignment="Top" Width="400" Header="Password"/>
-                <TextBlock x:ConnectionId='9' x:Name="Error_Login" HorizontalAlignment="Center" Height="auto" Text="Error logging in, please try again" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Foreground="Red" Visibility="Collapsed"/>
-                <Button x:ConnectionId='10' x:Name="Button_Login" Content="Login" HorizontalAlignment="Center" Height="auto" Margin="0,50,0,0" VerticalAlignment="Top" Width="124"                           />
+                <TextBox x:ConnectionId='7' x:Name="Username" HorizontalAlignment="Center" Height="Auto" Text="Type your username here" VerticalAlignment="Center" Width="500" Header="Username"                                                                       />
+                <PasswordBox x:ConnectionId='8' x:Name="Password" HorizontalAlignment="Center" Height="Auto" VerticalAlignment="Top" Width="500" Header="Password"/>
+                <Grid Width="500" HorizontalAlignment="Center" Height="Auto" Margin="0, 25, 0, 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:ConnectionId='11' x:Name="Serverip" Grid.Column="0" HorizontalAlignment="Left" Margin="0,0,0,0" Text="localhost" Width="160" VerticalAlignment="Top" Header="Server name or ip"/>
+                    <TextBox x:ConnectionId='12' x:Name="Portname" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" Text="1433" Width="100" VerticalAlignment="Top" Header="Server port"/>
+                    <TextBox x:ConnectionId='13' x:Name="Servername" Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,0,0" Text="test" Width="160" VerticalAlignment="Top" Header="Server name"/>
+                </Grid>
+                <TextBlock x:ConnectionId='9' x:Name="Error_Login" HorizontalAlignment="Center" Height="auto" Text="Error logging in, please try again" TextWrapping="Wrap" VerticalAlignment="Top" Width="500" Foreground="Red" Visibility="Collapsed"/>
+                <Button x:ConnectionId='10' x:Name="Button_Login" Content="Login" Grid.Column="1" HorizontalAlignment="Center" Height="auto" Margin="0,50,0,0" VerticalAlignment="Top" Width="150"                           />
+
             </StackPanel>
         </Grid>
 
-        <Grid x:ConnectionId='3' x:Name="Screen_Main" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Margin="5" Visibility="Visible">
+        <Grid x:ConnectionId='3' x:Name="Screen_Main" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Margin="5" Visibility="Collapsed">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="3*"/>
@@ -58,6 +69,7 @@
 
 
         </Grid>
+        <ListView HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Margin="0,400,0,0"/>
 
     </Grid>
 
