@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -14,7 +15,7 @@ namespace CS_project
             String username, String dbname, String port, String password)
         {
             MySql.Data.MySqlClient.MySqlConnection conn = null;
-            string connstr = String.Format("server=%s;user=%s;database=%s;port=%d;password=%s",
+            string connstr = String.Format("server={0};user={1};database={2};port={3};password={4}",
                 serverLoc, username, dbname, port, password);
             try
             {
@@ -23,7 +24,7 @@ namespace CS_project
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
-                Console.Error.WriteLine(ex);
+                Debug.Write(ex);
                 return null;
             }
             return conn;
